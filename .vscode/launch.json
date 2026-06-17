@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RightsBotApplication<rights-bot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gemini.RightsBotApplication",
+            "projectName": "rights-bot",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
