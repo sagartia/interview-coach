@@ -1,0 +1,74 @@
+[
+  {
+    "role": "Java工程師",
+    "category": "基礎概念",
+    "question": "請解釋 JVM 記憶體模型，包含 Heap、Stack、Method Area 的差異。",
+    "keyPoints": "Heap 存放物件實例，Stack 存放方法呼叫和區域變數，Method Area 存放類別資訊和靜態變數。GC 主要針對 Heap 進行回收。"
+  },
+  {
+    "role": "Java工程師",
+    "category": "基礎概念",
+    "question": "Java 中 == 和 equals() 的差別是什麼？",
+    "keyPoints": "== 比較記憶體位址（參考），equals() 比較物件內容。String 等類別覆寫了 equals() 所以比較內容，自訂類別若未覆寫則預設比較位址。"
+  },
+  {
+    "role": "Java工程師",
+    "category": "多執行緒",
+    "question": "請說明 synchronized 和 ReentrantLock 的差異，各自適合什麼場景？",
+    "keyPoints": "synchronized 是關鍵字、自動釋放鎖、不可中斷。ReentrantLock 是類別、需手動釋放、支援公平鎖、可中斷、可嘗試獲取鎖。複雜同步場景用 ReentrantLock。"
+  },
+  {
+    "role": "Java工程師",
+    "category": "多執行緒",
+    "question": "什麼是 ThreadLocal？它的使用場景和潛在問題是什麼？",
+    "keyPoints": "ThreadLocal 為每個執行緒提供獨立變數副本。適合存放用戶 session、資料庫連線等。潛在問題是記憶體洩漏，使用完要呼叫 remove()。"
+  },
+  {
+    "role": "Java工程師",
+    "category": "集合框架",
+    "question": "HashMap 的底層實作原理是什麼？Java 8 後有哪些改進？",
+    "keyPoints": "陣列 + 鏈結串列結構，Java 8 後鏈結串列長度超過 8 轉為紅黑樹，提升查詢效率從 O(n) 到 O(log n)。擴容時容量翻倍。"
+  },
+  {
+    "role": "Java工程師",
+    "category": "集合框架",
+    "question": "ArrayList 和 LinkedList 的差異？什麼情況下選擇哪個？",
+    "keyPoints": "ArrayList 底層是陣列，隨機存取 O(1)，插入刪除 O(n)。LinkedList 底層是雙向鏈結串列，隨機存取 O(n)，頭尾插入刪除 O(1)。頻繁查詢用 ArrayList，頻繁插入刪除用 LinkedList。"
+  },
+  {
+    "role": "Spring工程師",
+    "category": "核心概念",
+    "question": "請解釋 Spring IoC 和 DI 的概念，以及它們解決了什麼問題？",
+    "keyPoints": "IoC（控制反轉）將物件的建立和管理交給容器。DI（依賴注入）由容器注入依賴物件。解決了物件間耦合度高的問題，提升可測試性和可維護性。"
+  },
+  {
+    "role": "Spring工程師",
+    "category": "核心概念",
+    "question": "Spring Bean 的生命週期是什麼？",
+    "keyPoints": "實例化 → 屬性填充 → BeanNameAware → BeanFactoryAware → BeanPostProcessor前置 → @PostConstruct → InitializingBean → 自訂init → BeanPostProcessor後置 → 使用 → @PreDestroy → DisposableBean → 自訂destroy。"
+  },
+  {
+    "role": "Spring工程師",
+    "category": "AOP",
+    "question": "什麼是 AOP？Spring AOP 和 AspectJ 有什麼差異？",
+    "keyPoints": "AOP 面向切面程式設計，用於分離橫切關注點如日誌、事務。Spring AOP 基於動態代理（JDK或CGLIB），只支援方法級別。AspectJ 是完整 AOP 框架，支援欄位、建構子等，功能更強但更複雜。"
+  },
+  {
+    "role": "前端工程師",
+    "category": "JavaScript",
+    "question": "請解釋 JavaScript 的事件循環（Event Loop）機制。",
+    "keyPoints": "JS 是單執行緒，Event Loop 負責協調執行。Call Stack 執行同步程式碼，Web APIs 處理非同步操作，Callback Queue 存放待執行回呼，Microtask Queue（Promise）優先於 Macrotask Queue（setTimeout）。"
+  },
+  {
+    "role": "前端工程師",
+    "category": "Vue",
+    "question": "Vue 3 的 Composition API 和 Options API 有什麼差異？各自優缺點是什麼？",
+    "keyPoints": "Options API 按選項組織（data、methods、computed），直觀易學但邏輯分散。Composition API 按功能組織，邏輯複用性高、TypeScript 支援好，但學習曲線較陡。大型專案建議 Composition API。"
+  },
+  {
+    "role": "前端工程師",
+    "category": "效能",
+    "question": "瀏覽器的重繪（Repaint）和迴流（Reflow）是什麼？如何優化？",
+    "keyPoints": "Reflow 是重新計算元素位置和大小，成本高。Repaint 是重新繪製外觀，成本較低。優化方式：批次修改 DOM、使用 DocumentFragment、避免頻繁讀取 offsetWidth 等觸發 Reflow 的屬性、使用 CSS transform 代替位置修改。"
+  }
+]
